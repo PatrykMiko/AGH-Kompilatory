@@ -1,17 +1,15 @@
 class Skaner:
     def __init__(self, tekst):
         self.tekst = tekst
-        self.pozycja = 0
         self.kolumna = 1
-        self.aktualny_znak = self.tekst[self.pozycja] if self.tekst else None
+        self.aktualny_znak = self.tekst[self.kolumna - 1] if self.tekst else None
 
     def przesun(self):
-        self.pozycja += 1
         self.kolumna += 1
-        if self.pozycja >= len(self.tekst):
+        if self.kolumna - 1 >= len(self.tekst):
             self.aktualny_znak = None
         else:
-            self.aktualny_znak = self.tekst[self.pozycja]
+            self.aktualny_znak = self.tekst[self.kolumna - 1]
 
     def pomijaj_biale_znaki(self):
         while self.aktualny_znak is not None and self.aktualny_znak.isspace():
