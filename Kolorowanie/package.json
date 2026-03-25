@@ -1,0 +1,8 @@
+{
+  "name": "kolorowanie",
+  "version": "1.0.0",
+  "description": "Kolorowanie składni języka CalcLang (.calc)",
+  "scripts": {
+    "colorize": "bun run index.ts example.calc output.html"
+  }
+}

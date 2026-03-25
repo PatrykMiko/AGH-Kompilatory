@@ -1,0 +1,19 @@
+// CalcLang example
+
+fun square(x) = x * x
+
+fun power(base, exp) =
+    if exp == 0
+        return 1
+    else
+        return base * power(base, exp - 1)
+
+fun average(a, b) = (a + b) / 2
+
+let pi = 3.14159
+let r  = 5
+let area = pi * square(r)
+
+let result = average(square(3), power(2, 4))
+
+let bad = 42 @ 7

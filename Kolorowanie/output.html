@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>CalcLang — example.calc</title>
+  <style>
+    body { background:#1e1e1e; color:#d4d4d4; font:14px/1.6 Consolas,monospace; margin:0; padding:20px; }
+    h2   { color:#858585; font:13px sans-serif; margin-bottom:12px; }
+    .wrap { display:flex; gap:0; }
+    pre  { margin:0; white-space:pre; }
+    .gutter { color:#858585; text-align:right; padding-right:16px; min-width:36px;
+              user-select:none; border-right:1px solid #3a3a3a; margin-right:16px; }
+    .keyword { color:#569cd6; font-weight:bold; }
+    .number  { color:#b5cea8; }
+    .ident   { color:#9cdcfe; }
+    .op      { color:#d4d4d4; }
+    .punct   { color:#ffd700; }
+    .comment { color:#6a9955; font-style:italic; }
+    .error   { color:#f44747; text-decoration:underline wavy; }
+  </style>
+</head>
+<body>
+  <h2>CalcLang — example.calc</h2>
+  <div class="wrap">
+    <pre class="gutter">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre>
+    <pre class="code"><span class="comment">// CalcLang example</span>
+
+<span class="keyword">fun</span> <span class="ident">square</span><span class="punct">(</span><span class="ident">x</span><span class="punct">)</span> <span class="op">=</span> <span class="ident">x</span> <span class="op">*</span> <span class="ident">x</span>
+
+<span class="keyword">fun</span> <span class="ident">power</span><span class="punct">(</span><span class="ident">base</span><span class="punct">,</span> <span class="ident">exp</span><span class="punct">)</span> <span class="op">=</span>
+    <span class="keyword">if</span> <span class="ident">exp</span> <span class="op">==</span> <span class="number">0</span>
+        <span class="keyword">return</span> <span class="number">1</span>
+    <span class="keyword">else</span>
+        <span class="keyword">return</span> <span class="ident">base</span> <span class="op">*</span> <span class="ident">power</span><span class="punct">(</span><span class="ident">base</span><span class="punct">,</span> <span class="ident">exp</span> <span class="op">-</span> <span class="number">1</span><span class="punct">)</span>
+
+<span class="keyword">fun</span> <span class="ident">average</span><span class="punct">(</span><span class="ident">a</span><span class="punct">,</span> <span class="ident">b</span><span class="punct">)</span> <span class="op">=</span> <span class="punct">(</span><span class="ident">a</span> <span class="op">+</span> <span class="ident">b</span><span class="punct">)</span> <span class="op">/</span> <span class="number">2</span>
+
+<span class="keyword">let</span> <span class="ident">pi</span> <span class="op">=</span> <span class="number">3.14159</span>
+<span class="keyword">let</span> <span class="ident">r</span>  <span class="op">=</span> <span class="number">5</span>
+<span class="keyword">let</span> <span class="ident">area</span> <span class="op">=</span> <span class="ident">pi</span> <span class="op">*</span> <span class="ident">square</span><span class="punct">(</span><span class="ident">r</span><span class="punct">)</span>
+
+<span class="keyword">let</span> <span class="ident">result</span> <span class="op">=</span> <span class="ident">average</span><span class="punct">(</span><span class="ident">square</span><span class="punct">(</span><span class="number">3</span><span class="punct">)</span><span class="punct">,</span> <span class="ident">power</span><span class="punct">(</span><span class="number">2</span><span class="punct">,</span> <span class="number">4</span><span class="punct">)</span><span class="punct">)</span>
+
+<span class="keyword">let</span> <span class="ident">bad</span> <span class="op">=</span> <span class="number">42</span> <span class="error">@</span> <span class="number">7</span>
+</pre>
+  </div>
+</body>
+</html>
